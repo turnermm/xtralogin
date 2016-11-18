@@ -50,8 +50,7 @@ class action_plugin_xtralogin extends DokuWiki_Action_Plugin {
             $file = metaFN('xtralogin:data','ser') ;
             if(file_exists($file)) {
                 $user_data = unserialize(file_get_contents($file));
-                if(isset($user_data))   {
-                 if(isset($user_data[$user])  && isset($user_data[$user]));
+                 if(isset([$user_data])  && isset($user_data[$user])) {
                     $saved_data =  $user_data[$user] ;
                }
                else $saved_data = "";

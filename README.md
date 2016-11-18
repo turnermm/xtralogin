@@ -1,4 +1,4 @@
-captcha-login-for-Dokuwiki
+xtra input field for login
 ==========================
 
 Adds an extra field to the login screen
