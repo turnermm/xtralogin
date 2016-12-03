@@ -1,7 +1,7 @@
 base  xtralogin
 author  Myron Turner
 email  turnermm02@shaw.ca
-date  2016-11-22
+date  2016-12-02
 name  xtralogin
 desc  add field to login dialog 
 url   http://www.mturner.org/
