@@ -41,8 +41,9 @@ class action_plugin_xtralogin extends DokuWiki_Action_Plugin {
       *      for a serializled file in the meta/extralogin directory with a '.ser'  extension
     */
    function handle_act_preprocess(&$event, $param) {        
-         global $INPUT;   
+         global $INPUT,$ACT;   
  
+          if(!$INPUT->str('loginxtrainput','')) return;
            if (!$INPUT->server->has('REMOTE_USER')) return;
             $user =  $INPUT->server->str('REMOTE_USER');
           /* the following code is ready to use */  
@@ -56,21 +57,16 @@ class action_plugin_xtralogin extends DokuWiki_Action_Plugin {
                else $saved_data = "";
             }
             else $user_data = array();
+            if($saved_data) return;
          */
          
-         if(!$INPUT->str('loginxtrainput','')) return;
-         if(!$INPUT->str('loginxtra','') && !$saved_data) {
+        $saved_data =  $INPUT->str('loginxtra','');
+         if(!$saved_data) {
+             $ACT = 'logout';             
              msg('your warning here') ;
-             $event->result = false; // login fail
-             $event->preventDefault();
-             $event->stopPropagation();              
              return;
          }
-         $xtra_input = $INPUT->str('loginxtra');
        
-        /* do your own thing here,
-             e.g compare $xtra_input with current $user_data  and make decison based on comparison     
-       */      
        /*  
         Finally Save new data
        $user_data[$user] = $INPUT->str('loginxtra'];
