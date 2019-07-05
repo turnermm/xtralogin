@@ -59,13 +59,14 @@ class action_plugin_xtralogin extends DokuWiki_Action_Plugin {
             else $user_data = array();
             if($saved_data) return;
          */
-         
+/*
         $saved_data =  $INPUT->str('loginxtra','');
          if(!$saved_data) {
              $ACT = 'logout';             
              msg('your warning here') ;
              return;
          }
+ */
        
        /*  
         Finally Save new data
